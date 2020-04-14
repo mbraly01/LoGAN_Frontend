@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'angleultra';
+    src: url('monotype_-_angleultra-webfont.woff2') format('woff2'),
+         url('monotype_-_angleultra-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'blackhansans';
+    src: url('blackhansans-regular-webfont.woff2') format('woff2');
+    src: url('blackhansans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'angleultra';
+    font-size: 200px;
+    padding-top: 5%;
+}
+
+h2 {
+    font-family: 'angleultra';
+
+    padding: 10px;
+}
+
+p {
+    font-family: 'blackhansans';
+}
+
+div {
+    font-family: 'blackhansans';
+    padding-left: 0%;
+    text-align: center;
+    padding: 0px;
+}
+
+
+
+.Select {
+    border-color: white;
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    box-shadow: 0px 0px;
+}
+
+.css-g1d714-ValueContainer {
+    position: static;
+}
+.css-yk16xz-control {
+    max-height: 10px;
+    box-shadow: 5px 5px;
+}
+
+.css-g1d715-ValueContainer {
+    padding-bottom: 10px;
+    box-shadow: 0px 0px;
+}
+
+.css-1pahdxg-control {
+    padding-bottom: 10px;
+    max-height: 10px;
+    box-shadow: 0px 0px;
+}
+
+.css-1okebmr-indicatorSeparator{
+    width: 0px;
+    align-self: start;
+    box-shadow: 0px 0px;
+    color: white;
+    background-color: white;
+    height: 1px;
+
+}
+
+.css-1wa3eu0-placeholder{
+    position: static;
+    box-shadow: 0px 0px;
+}
+
+.css-g1d714-ValueContainer {
+    position: static;
+}
+button {
+    height: 30px;
+    width: 100px;
+    font-family: 'angleultra';
+    font-size: 20px;
+    margin-top: 40px;
+    box-shadow: 5px 5px;
+    background-color: white;
+    border: 0px;
+    color: black;
+}
+
+.input_box {
+    box-shadow: 5px 5px;
+}
+
+a {
+    color: black;
+}

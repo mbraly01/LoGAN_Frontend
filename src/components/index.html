@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            let myElement = document.getElementById("p");
+            myElement.style.boxShadow = `50px 50px 50px 50px`;
+            while (true) {
+                for (let i; i <= 10; i ++){
+                    
+                    await sleep(200);
+                }
+            } 
+        </script>
+        <p>Hello hello</p>
+    </body>
+</html>
