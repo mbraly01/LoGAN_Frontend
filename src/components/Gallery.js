@@ -22,7 +22,7 @@ export default function Gallery(props) {
     // useEffect(() => {
     //     makeGallery()
     // },[loaded])
-    if (!galList) {
+    if (galList.length < 1) {
         makeGallery()
       }
     return (
