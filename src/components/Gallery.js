@@ -15,7 +15,10 @@ export default function Gallery(props) {
         
         
     }
-    
+    // <div>{galList.names.map((name) => {
+    //     return (
+    //         <GalleryCard name={name}/>
+    //     )})}</div>
     // useEffect(() => {
     //     makeGallery()
     // },[loaded])
