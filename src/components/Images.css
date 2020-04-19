@@ -1,8 +1,8 @@
 
 @font-face {
     font-family: 'angleultra';
-    src: url('monotype_-_angleultra-webfont.woff2') format('woff2'),
-         url('monotype_-_angleultra-webfont.woff') format('woff');
+    src: url('./fonts/monotype_-_angleultra-webfont.woff2') format('woff2'),
+         url('./fonts/monotype_-_angleultra-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

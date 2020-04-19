@@ -11,26 +11,22 @@ export default function Gallery(props) {
         console.log(response)
         const data = await response.json();
         console.log(data)
-        setGalList(data)
+        setGalList(data.names)
         
         
     }
-    // <div>{galList.names.map((name) => {
-    //     return (
-    //         <GalleryCard name={name}/>
-    //     )})}</div>
-    // useEffect(() => {
-    //     makeGallery()
-    // },[loaded])
-    // if (galList.length < 1) {
-    //     makeGallery()
-    //     time.sleep(5)
-    //   }
+    const output = galList.map((name) => {
+        return (
+            <GalleryCard name={name}/>
+        )})
+    useEffect(() => {
+        makeGallery()
+    },[])
+
     return (
         <div>
-            <button onClick={makeGallery}>Click Button</button>
         <h2>Gallery of Logos</h2>
-        <div>{galList}</div>
+        <div>{output}</div>
         </div>
     )
 }

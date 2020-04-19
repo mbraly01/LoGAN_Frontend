@@ -1,23 +1,16 @@
 import React from 'react';
-import { Redirect, Route, BrowserRouter, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Dropdown from 'react-bootstrap/Dropdown';
-import Button from 'react';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { withRouter } from 'react-router-dom';
 import Select from 'react-select';
-import SelectSearch from 'react-select-search';
 import './Home.css';
-import createFilterOptions from 'react-select-fast-filter-options';
 // import '../../node_modules/react-select/dist/react-select.css';
 
 export default function Home(props) {
 const [industryList, setIndustryList] = useState([]);
 const [brandName, setBrandName] = useState("");
 const [industry, setIndustry] = useState("");
-const [gotIndustries, setGotIndustries] = useState(false);
+const [isSet, setIsSet] = useState(false);
 
 async function getIndustryList() {
     const response = await fetch("http://127.0.0.1:5000/industries")
@@ -41,13 +34,19 @@ async function loGANRun() {
 
     } 
     getBrand();
-    // window.location = '/Images'
     props.setBrandName(brandName)
   }
+
+  const downloadGallery = async () => {
+
+    const response = await fetch("http://127.0.0.1:5000/downloadGallery");
+    console.log(response)
+  }
+
   useEffect(() => {
       getIndustryList()
       console.log(props.brandName)
-      },[])
+      },[isSet])
 
   return (
     <div> 
@@ -62,18 +61,16 @@ async function loGANRun() {
         </div>
         <h2>Industry:</h2> 
                 <Select
+                defaultValue="Industry"
                 className="Select"
                 name="industry"
-                value="one"
                 options={industryList}
                 onChange={val => setIndustry(val["value"])}
               />
-
-        <button>
-          <Link to={{
+          <h2><Link to={{
             pathname: `/Images`}}
-            onClick={e => loGANRun()}>
-          Run</Link></button>
+            onClick={e => loGANRun(), e => downloadGallery()}>
+          Run</Link></h2>
   </div>
 )
 }

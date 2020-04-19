@@ -20,21 +20,8 @@ import image7 from '../output/img7.jpg';
 import image8 from '../output/img8.jpg';
 import image9 from '../output/img9.jpg';
 
-function Images(props) {
-  // const [galList, setGalList] = useState();
+export default function Images(props) {
   const name = props.brandName
-//   const makeGallery = async () => {
-
-//     const response = await fetch("http://127.0.0.1:5000/makeGallery");
-//     console.log(response)
-//     const data = await response.json();
-//     console.log(data)
-//     let galLister = data.names.map((name) => {
-//         return (
-//             <GalleryCard name={name}/>
-//         )})
-//     setGalList(galLister)
-// }
   useEffect(() => {
     console.log(props.brandName)
  })
@@ -64,100 +51,3 @@ function Images(props) {
       </div>
     );
   }
-  
-  export default Images;
-
-
-
-
-
-
-
-
-//   const [isLoading, setIsLoading] = useState(false)
-//   const [isError, setIsError] = useState(false)
-//   const [data, setData] = useState();
-//   const card = <p></p>
-//   async function getImage1(){
-//     const response= await fetch("http://127.0.0.1:5000/img1")
-//     const data = await response.json();
-//     }
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       setIsLoading(true);
-//       setIsError(false);
-//       try {
-//         card = getImage1();
-//         setData(data)
-//       } catch (error) {
-//         setIsError(true);
-//         console.log(error);
-//       }
-//       setIsLoading(false);
-//     }
-//     fetchData();
-//   }, [card])
-// return(
-//   <div className="App"/>
-//   </div>
-//   { isLoading ? getImage1 : <Card/>}>
-
-// )
-// }
-
-
-// export default App;
-
-
-
-// const Images = () => {
-
-//     async function getImage1(){
-//         const response= await fetch("http://127.0.0.1:5000/img1")
-//         const data = await response.json();
-//         return (
-//             <Card data="../output/img1.jpg"/>
-//         )
-//     }
-
-//     useEffect(() => {
-//         getImage1()
-//     })
-//     return (
-//         <p></p>
-//     )}
-
-//     const image = <p></p>;
-//     async function getImage1(){
-//         const response = await fetch("http://127.0.0.1:5000/img1")
-//         const data = await response.json();
-//         return (
-//             <Card data="/home/mbraly/python-for-byte-academy/Final_Project/Website/models/output/img1.jpg"></Card>
-//         )
-//     }
-//     async function getImage2(){
-//         const response = await fetch("http://127.0.0.1:5000/img2")
-//         const data = await response.json();
-//         return (
-//             <Card data="/home/mbraly/python-for-byte-academy/Final_Project/Website/models/output/img2.jpg"></Card>
-//         )
-//     }
-
-//     useEffect(() => {
-//         getImage1();
-
-//     })
-
-//     return (
-//         <script>{
-//         getImage1()
-//         }
-//         </script>
-//         return (
-//           {image}
-//         )
-//       }
-
-//         </script>
-//     )
-// }
