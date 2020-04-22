@@ -21,9 +21,10 @@ import image8 from '../output/img8.jpg';
 import image9 from '../output/img9.jpg';
 
 export default function Images(props) {
-  const name = props.brandName
+  const [brandName, setBrandName] = useState("");
+  const name = brandName
   useEffect(() => {
-    console.log(props.brandName)
+    console.log(name)
  })
     return (
       <div className="App">

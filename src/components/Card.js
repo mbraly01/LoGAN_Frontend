@@ -20,7 +20,7 @@ export default function Card(props) {
   }
   
   return (
-    <a href={props.image} download={name} onClick={addToGallery}>
+    <a href={props.image} download={name} onClick={e => addToGallery()}>
     <img id="p2" src={props.image}/>
 
   </a>

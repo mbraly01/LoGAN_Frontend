@@ -6,7 +6,7 @@ export default function GalleryCard (props) {
     return(
         <div>
         <span><img src= {`gallery/${props.name}.jpg`}/></span>
-        <span><h2>{props.name}</h2></span>
+        <span><h2 className="gal">{props.name}</h2></span>
         </div>
         )
 }

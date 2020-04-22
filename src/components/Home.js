@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Select from 'react-select';
 import './Home.css';
-// import '../../node_modules/react-select/dist/react-select.css';
 
 export default function Home(props) {
+  console.log(props)
 const [industryList, setIndustryList] = useState([]);
-const [brandName, setBrandName] = useState("");
+const [tempBrandName, setTempBrandName] = useState("");
 const [industry, setIndustry] = useState("");
 const [isSet, setIsSet] = useState(false);
 
@@ -26,15 +26,17 @@ async function loGANRun() {
         mode: "cors",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
-          "brand_name": brandName,
+          "brand_name": tempBrandName,
           "industry": industry
         }),
       }
-      await fetch("http://127.0.0.1:5000/run", configs)
+      fetch("http://127.0.0.1:5000/run", configs)
 
     } 
     getBrand();
-    props.setBrandName(brandName)
+    props.setBrandName(tempBrandName)
+    console.log(props.brandName)
+    downloadGallery()
   }
 
   const downloadGallery = async () => {
@@ -55,7 +57,7 @@ async function loGANRun() {
         <p>loGAN will create a logo for you</p>
         <h2>Brand Name:</h2>
         <div className="center-wrapper">
-        <input className="input_box" type="text" onChange={e => setBrandName(e.target.value)}/>
+        <input className="input_box" type="text" onChange={e => setTempBrandName(e.target.value)}/>
         </div>
         <div>
         </div>
@@ -67,9 +69,11 @@ async function loGANRun() {
                 options={industryList}
                 onChange={val => setIndustry(val["value"])}
               />
+        <button onClick={props.setBrandName("Greg")}>Hello</button>
           <h2><Link to={{
-            pathname: `/Images`}}
-            onClick={e => loGANRun(), e => downloadGallery()}>
+            pathname: `/Images`,
+            state: { brandName: tempBrandName }}}
+            onClick={e => loGANRun()}>
           Run</Link></h2>
   </div>
 )
