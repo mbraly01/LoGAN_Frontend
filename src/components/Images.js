@@ -21,11 +21,16 @@ import image8 from '../output/img8.jpg';
 import image9 from '../output/img9.jpg';
 
 export default function Images(props) {
-  const [brandName, setBrandName] = useState("");
-  const name = brandName
+  // const [brandName, setBrandName] = useState("");
+  const name = props.brandName
   useEffect(() => {
-    console.log(name)
+    console.log(props.brandName)
  })
+
+ const downloadGallery = async () => {
+
+  fetch("http://127.0.0.1:5000/downloadGallery");
+}
     return (
       <div className="App">
         <h2>Click Image to Download</h2>
@@ -48,6 +53,7 @@ export default function Images(props) {
         </div>
         <h2><Link to={{
             pathname: `/Gallery`}}
+            onClick={e => downloadGallery()}
             >See Gallery of Old Logos</Link></h2>
       </div>
     );

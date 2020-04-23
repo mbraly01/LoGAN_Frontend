@@ -6,7 +6,6 @@ import Select from 'react-select';
 import './Home.css';
 
 export default function Home(props) {
-  console.log(props)
 const [industryList, setIndustryList] = useState([]);
 const [tempBrandName, setTempBrandName] = useState("");
 const [industry, setIndustry] = useState("");
@@ -35,19 +34,10 @@ async function loGANRun() {
     } 
     getBrand();
     props.setBrandName(tempBrandName)
-    console.log(props.brandName)
-    downloadGallery()
-  }
-
-  const downloadGallery = async () => {
-
-    const response = await fetch("http://127.0.0.1:5000/downloadGallery");
-    console.log(response)
   }
 
   useEffect(() => {
       getIndustryList()
-      console.log(props.brandName)
       },[isSet])
 
   return (
@@ -69,7 +59,6 @@ async function loGANRun() {
                 options={industryList}
                 onChange={val => setIndustry(val["value"])}
               />
-        <button onClick={props.setBrandName("Greg")}>Hello</button>
           <h2><Link to={{
             pathname: `/Images`,
             state: { brandName: tempBrandName }}}
